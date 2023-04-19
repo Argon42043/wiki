@@ -12,6 +12,7 @@ module.exports = {
 
       if (config.allowDrawIoUnsafe) {
         allowedTags.push('foreignObject')
+        allowedAttrs.push('pointer-events')
         DOMPurify.addHook('uponSanitizeElement', (elm) => {
           if (elm.querySelectorAll) {
             const breaks = elm.querySelectorAll('foreignObject br, foreignObject p')
